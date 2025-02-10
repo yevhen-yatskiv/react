@@ -48,9 +48,7 @@ function SimpleForm() {
                 fullWidth
                 margin="normal"
                 InputLabelProps={{ shrink: true }}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.name}
+                {...formik.getFieldProps('name')}
                 error={formik.touched.name && Boolean(formik.errors.name)}
                 helperText={formik.touched.name && formik.errors.name}
               />
@@ -63,9 +61,7 @@ function SimpleForm() {
                 fullWidth
                 margin="normal"
                 InputLabelProps={{ shrink: true }}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.email}
+                {...formik.getFieldProps('email')}
                 error={formik.touched.email && Boolean(formik.errors.email)}
                 helperText={formik.touched.email && formik.errors.email}
               />
@@ -78,9 +74,7 @@ function SimpleForm() {
                 fullWidth
                 margin="normal"
                 InputLabelProps={{ shrink: true }}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.channel}
+                {...formik.getFieldProps('channel')}
                 error={formik.touched.channel && Boolean(formik.errors.channel)}
                 helperText={formik.touched.channel && formik.errors.channel}
               />
