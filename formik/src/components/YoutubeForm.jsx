@@ -2,12 +2,29 @@ import { useFormik } from 'formik';
 import { TextField, Button, Container, Typography, Box } from '@mui/material';
 
 function YoutubeForm() {
+  const validate = values => {
+    const errors = {};
+    if (!values.name) {
+      errors.name = 'Required';
+    }
+    if (!values.email) {
+      errors.email = 'Required';
+    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+      errors.email = 'Invalid email address';
+    }
+    if (!values.channel) {
+      errors.channel = 'Required';
+    }
+    return errors;
+  };
+
   const formik = useFormik({
     initialValues: {
       name: '',
       email: '',
       channel: '',
     },
+    validate,
     onSubmit: (values) => {
       console.log('Form data', values);
     },
@@ -29,7 +46,10 @@ function YoutubeForm() {
             fullWidth
             margin="normal"
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.name}
+            error={formik.touched.name && Boolean(formik.errors.name)}
+            helperText={formik.touched.name && formik.errors.name}
           />
           <TextField
             label="Email"
@@ -38,7 +58,10 @@ function YoutubeForm() {
             fullWidth
             margin="normal"
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.email}
+            error={formik.touched.email && Boolean(formik.errors.email)}
+            helperText={formik.touched.email && formik.errors.email}
           />
           <TextField
             label="Channel"
@@ -47,7 +70,10 @@ function YoutubeForm() {
             fullWidth
             margin="normal"
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.channel}
+            error={formik.touched.channel && Boolean(formik.errors.channel)}
+            helperText={formik.touched.channel && formik.errors.channel}
           />
           <Button
             type="submit"
