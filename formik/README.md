@@ -23,16 +23,16 @@ npm install
 
 ## Usage
 
-To use the `YoutubeForm` component, import it and include it in your JSX:
+To use the `SimpleForm` component, import it and include it in your JSX:
 
 ```jsx
 import React from 'react';
-import YoutubeForm from './src/components/YoutubeForm';
+import SimpleForm from './src/components/SimpleForm';
 
 function App() {
   return (
     <div>
-      <YoutubeForm />
+      <SimpleForm />
     </div>
   );
 }

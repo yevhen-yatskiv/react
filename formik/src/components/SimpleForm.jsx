@@ -1,7 +1,7 @@
 import { useFormik } from 'formik';
 import { TextField, Button, Container, Typography, Box, Grid } from '@mui/material';
 
-function YoutubeForm() {
+function SimpleForm() {
   const validate = values => {
     const errors = {};
     if (!values.name) {
@@ -117,4 +117,4 @@ function YoutubeForm() {
   );
 }
 
-export default YoutubeForm;
+export default SimpleForm;

@@ -1,10 +1,10 @@
 import './App.css'
-import YoutubeForm from './components/YoutubeForm'
+import SimpleForm from './components/SimpleForm'
 
 function App() {
 
   return (
-    <YoutubeForm />
+    <SimpleForm />
   )
 }
 

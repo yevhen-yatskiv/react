@@ -1,7 +1,7 @@
-import YoutubeForm from "./components/YoutubeForm";
+import SimpleForm from "./components/SimpleForm";
 
 function App() {
-  return <YoutubeForm />;
+  return <SimpleForm />;
 }
 
 export default App;
